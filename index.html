@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <title>Eu te amo❤️</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    h1, h2, h3, .highlight h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
+
+    .vinyl-screen {
+      height: 100vh;
+      background: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .vinyl-container {
+      position: relative;
+      width: 220px;
+      aspect-ratio: 1 / 1;
+      margin-bottom: 20px;
+    }
+
+    .vinyl-image {
+      width: 100%;
+      height: 100%;
+      animation: spin 6s linear infinite;
+    }
+
+    .vinyl-container button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .vinyl-container button:hover {
+      background: rgba(255,255,255,0.4);
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .main-content {
+      display: none;
+      padding: 1%;
+    }
+
+    .highlight {
+      position: relative;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .highlight img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+
+    .highlight h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3em;
+      font-weight: bold;
+      color: white;
+      background: rgba(0,0,0,0.6);
+      padding: 16px 24px;
+      border-radius: 12px;
+    }
+
+    .toggle-music {
+      display: block;
+      margin: 20px auto 40px auto;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 1px solid white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .toggle-music:hover {
+      background: rgba(255,255,255,0.3);
+      transform: scale(1.05);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.1em;
+      box-shadow: 0 4px 8px rgba(255,255,255,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(255,255,255,0.2);
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 30px 0;
+    }
+
+    .gallery img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    .letter {
+      background: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      padding: 20px;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 12px;
+      white-space: pre-wrap;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      font-family: 'Montserrat', sans-serif;
+       font-weight: 400;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="vinyl-screen">
+<div class="vinyl-container">
+  <img src="vinil.png" alt="Vinil" class="vinyl-image">
+  <button onclick="startSite()">▶</button>
+</div>
+
+    <h3>Clique para começar a Nossa Música!</h3>
+  </div>
+
+  <!-- Música -->
+  <audio id="musica" loop>
+    <source src="/velhainfancia.mp3" type="audio/mpeg" />
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <div class="main-content">
+    <button class="toggle-music" onclick="toggleMusic()">⏸ Pausar Música</button>
+
+    <div class="highlight">
+      <img src="/IMG_5917.JPG" alt="Foto de capa">
+      <h2>Você é o amor da minha vida!</h2>
+    </div>
+
+    <div class="cards">
+      <div class="card">Seu sorriso ilumina meus dias</div>
+      <div class="card">Seus olhos refletem a beleza da sua alma</div>
+      <div class="card">Você me entende como ninguém</div>
+      <div class="card">A gente foi feito um pro outro</div>
+      <div class="card">É a minha melhor amiga pra tudo</div>
+      <div class="card">Me faz rir em qualquer situação</div>
+    </div>
+
+    <div class="gallery">
+      <img src="/img/EBNB6888.JPG">
+      <img src="/img/IMG_5911.JPG">
+      <img src="/img/IMG_6001.JPG">
+      <img src="/img/IMG_6123.JPG">
+      <img src="/img/IMG_6272.JPG">
+      <img src="/img/IMG_6274.JPG">
+      <img src="/img/IMG_6294.JPG">
+      <img src="/img/IMG_6297.JPG">
+      <img src="/img/IMG_6353.JPG">
+      <img src="/img/IMG_6435.JPG">
+      <img src="/img/IMG_6445.JPG"
+      <img src="/img/IMG_6461.JPG">
+      <img src="/img/IMG_6465.JPG">
+      <img src="/img/IMG_E6206.JPG">
+      <img src="/img/IMG_E6234.JPG">
+      <img src="/img/IMG_E6272.JPG">
+      <img src="/img/IMG_E6297.JPG">
+      <img src="/img/IMG_E6601.JPG">
+      <img src="/img/KHHT6509.JPG">
+      <img src="/img/KWOS3725.JPG">
+      <img src="/img/KXBH7489.JPG">
+      <img src="/img/MGLLE0347.JPG">
+    </div>
+
+    <div class="letter">
+      Meu amor,
+
+      Desde que você chegou, a minha vida ganhou cor.
+      Você é a maior certeza da minha vida, eu te escolheria mil vezes!
+      Eu me lembro exatamente do que senti no momento em que me apaixonei por você, tudo que eu queria naquela hora, naquele cenário, enquanto eu me perdia nos seus olhos,era te ter pro resto da minha vida. E que bom que te tenho!
+      Você é o suprassumo da beleza, você é o significado de perfeição, e me fez conhecer o significado do amor.
+      Eu queria ser capaz de expressar todo o meu amor, mas palavras não são suficientes, o que eu sinto por você está acima da minha própria compreensão, eu me perco, mas não quero me achar. 
+      Te amar é muito bom, você foi sem dúvida alguma a melhor escolha da minha vida inteira e eu quero partilhar todos os momentos dela com você.
+      Eu quero fazer com que você se sinta a pessoa mais especial do planeta, porque você é! Quero poder te fazer sorrir em qualquer situação, quero te fazer feliz e te ver bem custe o que custar.
+      Você é o amor da minha vida, você é linda, muuito cheirosa, talentosa, inteligente, esforçada, e sem dúvidas fomos feitos um pro outro. Eu poderia citar um milhão de qualidades suas e de motivos pra eu te amar, mas ainda não seria suficiente.
+      Muito obrigado por me ensinar o que é amar, muito obrigado por me mostrar o que é o amor, eu não consigo imaginar a minha vida sem você, e nem quero! 
+      Obrigado por existir e ser a mulher da minha vida! Eu te amo universos. ❤️
+
+      Para sempre seu,
+      Thiago
+    </div>
+  </div>
+
+  <script>
+    const musica = document.getElementById('musica');
+    let tocando = true;
+
+    function startSite() {
+      document.querySelector('.vinyl-screen').style.display = 'none';
+      document.querySelector('.main-content').style.display = 'block';
+      musica.play();
+    }
+
+    function toggleMusic() {
+      if (tocando) {
+        musica.pause();
+        event.target.textContent = '▶ Tocar Música';
+      } else {
+        musica.play();
+        event.target.textContent = '⏸ Pausar Música';
+      }
+      tocando = !tocando;
+    }
+  </script>
+</body>
+</html>
